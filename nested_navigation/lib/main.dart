@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(fontSize: 16),
-        ),
+        textTheme: const TextTheme(bodyMedium: TextStyle(fontSize: 16)),
       ),
       home: const HomeScreen(),
     );
@@ -30,10 +28,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('Home'), centerTitle: true),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -47,11 +42,16 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SetupFlowScreen()),
+                  MaterialPageRoute(
+                    builder: (context) => const SetupFlowScreen(),
+                  ),
                 );
               },
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 30,
+                  vertical: 15,
+                ),
                 textStyle: const TextStyle(fontSize: 16),
               ),
               child: const Text('Start Setup Flow'),
@@ -77,6 +77,11 @@ class _SetupFlowScreenState extends State<SetupFlowScreen> {
 
   // Fungsi untuk navigasi ke ConnectDeviceScreen
   void _onDeviceFound() {
+    _navigatorKey.currentState!.pushNamed('confirm_device');
+  }
+
+  // Fungsi untuk konfirmasi device
+  void _onDeviceConfirmed() {
     _navigatorKey.currentState!.pushNamed('connect_device');
   }
 
@@ -106,8 +111,13 @@ class _SetupFlowScreenState extends State<SetupFlowScreen> {
             case 'find_devices':
               page = FindDevicesScreen(onDeviceFound: _onDeviceFound);
               break;
+            case 'confirm_device':
+              page = ConfirmDeviceScreen(onDeviceConfirmed: _onDeviceConfirmed);
+              break;
             case 'connect_device':
-              page = ConnectDeviceScreen(onSetupComplete: () => _completeSetup(context));
+              page = ConnectDeviceScreen(
+                onSetupComplete: () => _completeSetup(context),
+              );
               break;
             default:
               page = FindDevicesScreen(onDeviceFound: _onDeviceFound);
@@ -143,6 +153,37 @@ class FindDevicesScreen extends StatelessWidget {
               textStyle: const TextStyle(fontSize: 16),
             ),
             child: const Text('Device Found'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Layar Konfirmasi Perangkat (ConfirmDeviceScreen)
+class ConfirmDeviceScreen extends StatelessWidget {
+  final VoidCallback onDeviceConfirmed;
+
+  const ConfirmDeviceScreen({super.key, required this.onDeviceConfirmed});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text(
+            'Confirming Device...',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: onDeviceConfirmed,
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              textStyle: const TextStyle(fontSize: 16),
+            ),
+            child: const Text('Device Confirmed'),
           ),
         ],
       ),
