@@ -25,7 +25,7 @@
 - Halaman About menampilkan versi aplikasi.
 - Halaman Settings menampilkan username.
 
-**Screenshot:**
+**Screenshot:**  \
 ![Home screen](navigation/screenshots/home.png)
 ![About screen](navigation/screenshots/about.png)
 
@@ -41,7 +41,7 @@
 - Navigasi ke detail item dengan deskripsi.
 - Kembali ke Home dengan tombol Back.
 
-**Screenshot:**
+**Screenshot:** \
 ![Detail screen](navigation_20/screenshots/detail_akhir.png)
 
 ---
@@ -56,7 +56,7 @@
 - Setiap langkah memiliki tombol aksi untuk melanjutkan ke langkah berikutnya.
 - Tombol kembali untuk keluar dari flow.
 
-**Screenshot:**
+**Screenshot:** \
 ![Home screen baru](nested_navigation/screenshots/home_baru.png)
 ![Find device screen baru](nested_navigation/screenshots/find_device_baru.png)
 ![Confirm device screen](nested_navigation/screenshots/confirm_device.png)
@@ -76,7 +76,7 @@
 - Navigasi ke halaman Settings.
 - Tombol Settings di Home.
 
-**Screenshot:**
+**Screenshot:** \
 ![Home screen baru](deep_link_navigation/screenshots/home_baru.png)
 ![Settings screen](deep_link_navigation/screenshots/settings.png)
 
