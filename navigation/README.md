@@ -8,15 +8,15 @@
 
 ## Deskripsi
 
-Proyek Flutter ini merupakan tugas praktikum ke-5 pada mata kuliah Praktikum Pemrograman Berbasis Mobile. Proyek ini menampilkan scene interaktif dengan gesture, drag-and-drop, efek visual, dan fitur zoom/pan menggunakan `PageView`.
+Proyek Flutter ini merupakan tugas praktikum ke-5 pada mata kuliah Praktikum Pemrograman Berbasis Mobile. Proyek ini menampilkan navigasi menggunakan push pada named routes.
 
-![Gambar awal](images/awal.png)
+![Home screen awal](screenshots/awal.png)
 
 ---
 
 ## 💪 Langkah-langkah Pengerjaan
 
-### 1. Tambah layar baru (About Screen)
+### 1. Tambah class layar baru (About Screen)
 
 Di dalam file `main` pada direktori `lib`, tambahkan class berikut pada akhir program:
 
@@ -101,5 +101,5 @@ Di dalam file `main` pada direktori `lib`, tambahkan baris berikut pada children
 
 ## Screenshot Hasil Akhir:
 
-![Deskripsi gambar](images/about_screen.png)
-![Deskripsi gambar](images/home_screen.png)
+![Home screen](screenshots/home.png)
+![About screen](screenshots/about.png)
